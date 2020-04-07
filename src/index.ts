@@ -1,3 +1,5 @@
+import { NodeRuntime } from "inspector"
+
 let a = 1 + 2
 let b = a + 3
 let c = {
@@ -39,3 +41,15 @@ const enum Language {
 
 let japan = Language.Japanese
 
+const test = null
+
+
+function sumVariadic(): number {
+    return Array
+    .from(arguments)
+    .reduce((total, n) => total + n, 0)
+}
+
+function sumVariadicSafe(...numbers: number[]): number {
+    return numbers.reduce((total, n) => total + n, 0)
+}
